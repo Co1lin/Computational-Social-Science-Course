@@ -1,4 +1,4 @@
-本程序计算输入文件data.in中已经分好词的词语的TF、IDF、TF_IDF值，并将Rank List结果输出到相应文件。
+本程序计算输入文件data.in中已经分好词的词语的TF、IDF、TF_IDF值，并将Rank List结果输出到"result.out"。
 
 Tips：  
 Mac版本使用Clion编译；Windows版本使用VS（2019）编译。对应文件夹是各自的工程文件夹，里面可以找到相应的源文件、可执行文件。  
