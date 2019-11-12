@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/colin/CLionProjects/tf_idf/main.cpp
+/Users/colin/CLionProjects/Computational-Social-Science-Course/tf_idf/tf_idf_for_mac/main.cpp
 iostream
 -
 cstdio
@@ -24,6 +24,10 @@ ctime
 map
 -
 set
+-
+vector
+-
+stack
 -
 fstream
 -

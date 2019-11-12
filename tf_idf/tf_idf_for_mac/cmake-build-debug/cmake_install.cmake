@@ -1,4 +1,4 @@
-# Install script for directory: /Users/colin/CLionProjects/tf_idf
+# Install script for directory: /Users/colin/CLionProjects/Computational-Social-Science-Course/tf_idf/tf_idf_for_mac
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/colin/CLionProjects/tf_idf/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/colin/CLionProjects/Computational-Social-Science-Course/tf_idf/tf_idf_for_mac/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

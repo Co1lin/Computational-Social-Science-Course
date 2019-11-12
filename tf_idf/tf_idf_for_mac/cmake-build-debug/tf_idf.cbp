@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/colin/CLionProjects/tf_idf/cmake-build-debug"/>
+				<Option working_dir="/Users/colin/CLionProjects/Computational-Social-Science-Course/tf_idf/tf_idf_for_mac/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/tf_idf/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/tf_idf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/tf_idf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/tf_idf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/Computational-Social-Science-Course/tf_idf/tf_idf_for_mac/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/Computational-Social-Science-Course/tf_idf/tf_idf_for_mac/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/Computational-Social-Science-Course/tf_idf/tf_idf_for_mac/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/Computational-Social-Science-Course/tf_idf/tf_idf_for_mac/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/colin/CLionProjects/tf_idf/cmake-build-debug"/>
+				<Option working_dir="/Users/colin/CLionProjects/Computational-Social-Science-Course/tf_idf/tf_idf_for_mac/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/tf_idf/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/tf_idf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/tf_idf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/tf_idf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/Computational-Social-Science-Course/tf_idf/tf_idf_for_mac/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/Computational-Social-Science-Course/tf_idf/tf_idf_for_mac/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/Computational-Social-Science-Course/tf_idf/tf_idf_for_mac/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/Computational-Social-Science-Course/tf_idf/tf_idf_for_mac/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/colin/CLionProjects/tf_idf/cmake-build-debug"/>
+				<Option working_dir="/Users/colin/CLionProjects/Computational-Social-Science-Course/tf_idf/tf_idf_for_mac/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/tf_idf/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/tf_idf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/tf_idf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/tf_idf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/Computational-Social-Science-Course/tf_idf/tf_idf_for_mac/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/Computational-Social-Science-Course/tf_idf/tf_idf_for_mac/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/Computational-Social-Science-Course/tf_idf/tf_idf_for_mac/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/Computational-Social-Science-Course/tf_idf/tf_idf_for_mac/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="tf_idf">
-				<Option output="/Users/colin/CLionProjects/tf_idf/cmake-build-debug/tf_idf" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/colin/CLionProjects/tf_idf/cmake-build-debug"/>
+				<Option output="/Users/colin/CLionProjects/Computational-Social-Science-Course/tf_idf/tf_idf_for_mac/cmake-build-debug/tf_idf" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/colin/CLionProjects/Computational-Social-Science-Course/tf_idf/tf_idf_for_mac/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -52,15 +52,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/tf_idf/cmake-build-debug/Makefile&quot;  VERBOSE=1 tf_idf"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/tf_idf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/tf_idf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/tf_idf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/Computational-Social-Science-Course/tf_idf/tf_idf_for_mac/cmake-build-debug/Makefile&quot;  VERBOSE=1 tf_idf"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/Computational-Social-Science-Course/tf_idf/tf_idf_for_mac/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/Computational-Social-Science-Course/tf_idf/tf_idf_for_mac/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/Computational-Social-Science-Course/tf_idf/tf_idf_for_mac/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="tf_idf/fast">
-				<Option output="/Users/colin/CLionProjects/tf_idf/cmake-build-debug/tf_idf" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/colin/CLionProjects/tf_idf/cmake-build-debug"/>
+				<Option output="/Users/colin/CLionProjects/Computational-Social-Science-Course/tf_idf/tf_idf_for_mac/cmake-build-debug/tf_idf" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/colin/CLionProjects/Computational-Social-Science-Course/tf_idf/tf_idf_for_mac/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -73,17 +73,17 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/tf_idf/cmake-build-debug/Makefile&quot;  VERBOSE=1 tf_idf/fast"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/tf_idf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/tf_idf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/tf_idf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/Computational-Social-Science-Course/tf_idf/tf_idf_for_mac/cmake-build-debug/Makefile&quot;  VERBOSE=1 tf_idf/fast"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/Computational-Social-Science-Course/tf_idf/tf_idf_for_mac/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/Computational-Social-Science-Course/tf_idf/tf_idf_for_mac/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/colin/CLionProjects/Computational-Social-Science-Course/tf_idf/tf_idf_for_mac/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/colin/CLionProjects/tf_idf/main.cpp">
+		<Unit filename="/Users/colin/CLionProjects/Computational-Social-Science-Course/tf_idf/tf_idf_for_mac/main.cpp">
 			<Option target="tf_idf"/>
 		</Unit>
-		<Unit filename="/Users/colin/CLionProjects/tf_idf/CMakeLists.txt">
+		<Unit filename="/Users/colin/CLionProjects/Computational-Social-Science-Course/tf_idf/tf_idf_for_mac/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

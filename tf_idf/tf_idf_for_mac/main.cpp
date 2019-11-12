@@ -15,6 +15,8 @@
 #include <ctime>
 #include <map>
 #include <set>
+#include <vector>
+#include <stack>
 #include <fstream>
 using namespace std;
 
@@ -22,6 +24,7 @@ struct word
 {
     int tot, poem;
     double tf, idf, tf_idf;
+    vector<int> poem_index;
 };
 struct top_ele
 {
@@ -41,20 +44,78 @@ struct top_ele
     {
         return iter == y.iter;
     }
-    void output() const
+    void output(ofstream &f) const
     {
-        printf("%s", (*iter).first.c_str());
+        //printf("%s", (*iter).first.c_str());
+        f << (*iter).first;
         if (list_type == 1)
-            printf(" (%f), ", (*iter).second.tf);
+            //printf(" (%f), ", (*iter).second.tf);
+            f << " (" << (*iter).second.tf << "), ";
         else if (list_type == 2)
-            printf(" (%f), ", (*iter).second.idf);
+            //printf(" (%f), ", (*iter).second.idf);
+            f << " (" << (*iter).second.idf << "), ";
         else
-            printf(" (%f), ", (*iter).second.tf_idf);
+            //printf(" (%f), ", (*iter).second.tf_idf);
+            f << " (" << (*iter).second.tf_idf << "), ";
+    }
+};
+struct rank_for_each_poem
+{
+    string origin;
+    multiset<top_ele> rank[3];
+
+    void insert(const map<string, word>::iterator &it)
+    {
+        for (short i = 0; i <= 2; i++)
+        {
+            rank[i].insert({it, (short)(i + 1)});
+            //origin += it->first;
+            //origin += " ";
+        }
+    }
+
+    void update()
+    {
+        for (short i = 0; i <= 2; i++)
+        {
+            stack<top_ele> tmp;
+            multiset<top_ele>::iterator it_out;
+            for (it_out = rank[i].begin(); it_out != rank[i].end(); it_out++)
+            {
+                tmp.push(*it_out);
+                rank[i].erase(it_out);
+            }
+            while (!tmp.empty())
+            {
+                top_ele ele = tmp.top();
+                rank[i].insert(ele);
+                tmp.pop();
+            }
+        }
+    }
+
+    void output(ofstream &f)
+    {
+        update();
+        f << "      | TF Rank    : ";
+        multiset<top_ele>::iterator it_out;
+        for (it_out = rank[0].begin(); it_out != rank[0].end(); it_out++)
+            (*it_out).output(f);
+        f << endl;
+        f << "      | IDF Rank   : ";
+        for (it_out = rank[1].begin(); it_out != rank[1].end(); it_out++)
+            (*it_out).output(f);
+        f << endl;
+        f << "      | TF_IDF Rank: ";
+        for (it_out = rank[1].begin(); it_out != rank[1].end(); it_out++)
+            (*it_out).output(f);
+        f << endl;
     }
 };
 
 int top_num = 6;
 map<string, word> mydata;
+vector< rank_for_each_poem > poem_list;
 int poems = 0;
 int tot_words = 0;
 int tot_diff_words = 0;
@@ -77,7 +138,7 @@ void del_the_same(const map<string, word>::iterator &it, const int &list_type);
 void pre_output();
 void read_data();
 void calculate();
-void res_output();
+void res_output(ofstream &f);
 
 int main()
 {
@@ -86,13 +147,18 @@ int main()
     pre_output();
     read_data();
     calculate();
-    res_output();
+    ofstream f;
+    f.open("../result.txt");
+    res_output(f);
     end_time = clock();
     double tot_time = (double)(end_time - start_time) / CLOCKS_PER_SEC;
     printf("--------\n\n");
+    f << "--------\n\n";
     printf("  Run time: %f s\n\n", tot_time);
+    f << "  Run time: " << tot_time << " s\n\n";
     printf("----PROGRAM COMPLETED----\n");
-    fclose(stdout);
+    f << "----END----\n";
+
     return 0;
 }
 
@@ -161,9 +227,12 @@ void read_data()
     ifstream in("../data.in");
     string test;
     printf("----READ DATA----\n\n");
+    poem_list.push_back({});
     while (getline(in, test))
     {
+        poem_list.push_back({});
         poems++;
+        poem_list[poems].origin = test;
         //int word_count_in_this_poem = 0;
         int before = 0; //last space + 1
         map<string, bool> words_in_this_poem;
@@ -185,17 +254,21 @@ void read_data()
                     //count
                     (*it).second.tot++;
                     if (!words_in_this_poem[thisword])
+                    {
                         (*it).second.poem++;
+                        poem_list[poems].insert(it);
+                    }
                     words_in_this_poem[thisword] = true;
                 }
                 else    //can't find; a new word
                 {
                     tot_diff_words++;
                     mydata[thisword] = {1, 1};
-                    //it = mydata.find(thisword);
-                    words_in_this_poem[thisword] = true;
+                    it = mydata.find(thisword);
+                    poem_list[poems].insert(it);
                 }
-            }//end if;
+                it->second.poem_index.push_back(poems);
+            }//end if
         }//end for
         if (poems % 1000 == 0)
         {
@@ -241,31 +314,67 @@ void calculate()
         if (cc % 1000 == 0)
             printf("  processed %d words\n", cc);
     }//end for
-    printf("\n  the result will be saved in \"result.out\"\n\n");
+    printf("\n  The result will be saved in \"result.out\"\n\n");
     printf("\n\n");
 }
 
-void res_output()
+void res_output(ofstream &f)
 {
     printf("--------\n");
-    printf("  The program will finish running soon.\n");
-    freopen("../result.out", "w", stdout);
-    printf("----OUTPUT----\n\n");
-    printf("  Info: %d words, %d different words, %d poems\n\n", tot_words, tot_diff_words, poems);
-    printf("  Rank List:\n\n");
+    //f << "--------\n";
+    //f << "  Outputing the result into \"result.txt\"\n";
+    printf("  Outputing the result into \"result.txt\"...\n\n");
+    //freopen("../result.out", "w", stdout);
+    //ofstream f;
+    //f.open("../result.txt");
+    //printf("----OUTPUT----\n\n");
+    f << "----OUTPUT----\n\n";
+    //printf("  Info: %d words, %d different words, %d poems\n\n", tot_words, tot_diff_words, poems);
+    f << "  Info: " << tot_words << " words, " << tot_diff_words << " different words, " << poems << " poems\n\n";
+    //printf("  Rank List:\n\n");
+    f << "  Total Rank List:\n\n";
     //top_ele out;
-    printf("    TF    : ");
-    set<top_ele>::iterator it_out;
+    f << "    TF    : ";
+    multiset<top_ele>::iterator it_out;
     for (it_out = top_list_tf.begin(); it_out != top_list_tf.end(); it_out++)
-        (*it_out).output();
-    printf("\n");
-    printf("    IDF   : ");
+        (*it_out).output(f);
+    //printf("\n");
+    f << endl;
+    //printf("    IDF   : ");
+    f << "    IDF   : ";
     for (it_out = top_list_idf.begin(); it_out != top_list_idf.end(); it_out++)
-        (*it_out).output();
-    printf("\n");
-    printf("    TF_IDF: ");
+        (*it_out).output(f);
+    //printf("\n");
+    f << endl;
+    //printf("    TF_IDF: ");
+    f << "    TF_IDF: ";
     for (it_out = top_list_tf_idf.begin(); it_out != top_list_tf_idf.end(); it_out++)
-        (*it_out).output();
-    printf("\n\n");
+        (*it_out).output(f);
+    //printf("\n\n");
+    f << endl << endl;
+
+    //analylize some poems
+    f << "  Rank List for some poems:\n";
+    printf("----ADDITIONAL INPUT----\n\n");
+    printf("  Please input which poems you want to see its words rank list:\n");
+    printf("  (input a series of number, END with -1!):\n    ");
+
+    vector<int> poem_index;
+    int tmp_index = 0;
+    while (cin >> tmp_index)
+    {
+        if (tmp_index == -1)
+            break;
+        poem_index.push_back(tmp_index);
+    }
+    for (short i = 0; i <= poem_index.size() - 1; i++)
+    {
+        f << "\n    For poem " << poem_index[i] << " : \n";
+        printf("    Outputing data for poem %d...\n", poem_index[i]);
+        poem_list[poem_index[i]].output(f);
+        f << "    Original Sentence: " << poem_list[poem_index[i]].origin << endl;
+    }
+    printf("\n  Finished!\n");
+
     //fclose(stdout);
 }
