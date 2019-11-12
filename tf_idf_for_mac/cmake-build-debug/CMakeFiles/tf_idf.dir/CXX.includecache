@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/colin/CLionProjects/tf_idf/main.cpp
+iostream
+-
+cstdio
+-
+cmath
+-
+string
+-
+cstring
+-
+cstdlib
+-
+ctime
+-
+map
+-
+set
+-
+fstream
+-
+
