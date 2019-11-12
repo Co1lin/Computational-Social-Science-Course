@@ -2,7 +2,7 @@
 //  main.cpp
 //  t1
 //
-//  Created by Colin on 2019/11/11.
+//  Created by Colin on 2019/11/11~13.
 //  Copyright © 2019 Colin. All rights reserved.
 //
 //#define _CRT_SECURE_NO_WARNINGS
@@ -46,16 +46,12 @@ struct top_ele
     }
     void output(ofstream &f) const
     {
-        //printf("%s", (*iter).first.c_str());
         f << (*iter).first;
         if (list_type == 1)
-            //printf(" (%f), ", (*iter).second.tf);
             f << " (" << (*iter).second.tf << "), ";
         else if (list_type == 2)
-            //printf(" (%f), ", (*iter).second.idf);
             f << " (" << (*iter).second.idf << "), ";
         else
-            //printf(" (%f), ", (*iter).second.tf_idf);
             f << " (" << (*iter).second.tf_idf << "), ";
     }
 };
@@ -69,8 +65,6 @@ struct rank_for_each_poem
         for (short i = 0; i <= 2; i++)
         {
             rank[i].insert({it, (short)(i + 1)});
-            //origin += it->first;
-            //origin += " ";
         }
     }
 
@@ -321,36 +315,23 @@ void calculate()
 void res_output(ofstream &f)
 {
     printf("--------\n");
-    //f << "--------\n";
-    //f << "  Outputing the result into \"result.txt\"\n";
     printf("  Outputing the result into \"result.txt\"...\n\n");
-    //freopen("../result.out", "w", stdout);
-    //ofstream f;
-    //f.open("../result.txt");
-    //printf("----OUTPUT----\n\n");
     f << "----OUTPUT----\n\n";
-    //printf("  Info: %d words, %d different words, %d poems\n\n", tot_words, tot_diff_words, poems);
     f << "  Info: " << tot_words << " words, " << tot_diff_words << " different words, " << poems << " poems\n\n";
-    //printf("  Rank List:\n\n");
     f << "  Total Rank List:\n\n";
-    //top_ele out;
+    //top_ele output
     f << "    TF    : ";
     multiset<top_ele>::iterator it_out;
     for (it_out = top_list_tf.begin(); it_out != top_list_tf.end(); it_out++)
         (*it_out).output(f);
-    //printf("\n");
     f << endl;
-    //printf("    IDF   : ");
     f << "    IDF   : ";
     for (it_out = top_list_idf.begin(); it_out != top_list_idf.end(); it_out++)
         (*it_out).output(f);
-    //printf("\n");
     f << endl;
-    //printf("    TF_IDF: ");
     f << "    TF_IDF: ";
     for (it_out = top_list_tf_idf.begin(); it_out != top_list_tf_idf.end(); it_out++)
         (*it_out).output(f);
-    //printf("\n\n");
     f << endl << endl;
 
     //analylize some poems
@@ -375,6 +356,4 @@ void res_output(ofstream &f)
         f << "    Original Sentence: " << poem_list[poem_index[i]].origin << endl;
     }
     printf("\n  Finished!\n");
-
-    //fclose(stdout);
 }
