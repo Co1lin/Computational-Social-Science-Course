@@ -48,11 +48,11 @@ struct top_ele
     {
         f << (*iter).first;
         if (list_type == 1)
-            f << " (" << (*iter).second.tf << "), ";
+            f << " (" << (*iter).second.tf << "), "/* << endl*/;
         else if (list_type == 2)
-            f << " (" << (*iter).second.idf << "), ";
+            f << " (" << (*iter).second.idf << "), "/* << endl*/;
         else
-            f << " (" << (*iter).second.tf_idf << "), ";
+            f << " (" << (*iter).second.tf_idf << "), "/* << endl*/;
     }
 };
 struct rank_for_each_poem
@@ -101,7 +101,7 @@ struct rank_for_each_poem
             (*it_out).output(f);
         f << endl;
         f << "      | TF_IDF Rank: ";
-        for (it_out = rank[1].begin(); it_out != rank[1].end(); it_out++)
+        for (it_out = rank[2].begin(); it_out != rank[2].end(); it_out++)
             (*it_out).output(f);
         f << endl;
     }
@@ -293,12 +293,13 @@ void calculate()
         top_list_idf.insert({ it, 2 });
         top_list_tf_idf.insert({ it, 3 });
         multiset<top_ele>::iterator last;
-        //to check Zipf's Law
-        /*last = top_list_tf.end();
+        //comment to check Zipf's Law
+        last = top_list_tf.end();
         last--;
         if (top_list_tf.size() >= top_num + 1)
-            top_list_tf.erase(last);*/
+            top_list_tf.erase(last);
         last = top_list_idf.end();
+        //
         last--;
         if (top_list_idf.size() >= top_num + 1)
             top_list_idf.erase(last);
@@ -342,7 +343,7 @@ void res_output(ofstream &f)
     f << endl << endl;
 
     printf("  Outputing the total_tf_rank_list into \"tf_rank_list.txt\"...\n\n");
-    store_tf();
+    //store_tf();
     //analylize some poems
     f << "  Rank List for some poems:\n";
     printf("----ADDITIONAL INPUT----\n\n");
