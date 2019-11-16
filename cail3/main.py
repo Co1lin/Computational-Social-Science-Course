@@ -5,7 +5,7 @@ statistics = {}
 
 #input
 print("Please input five different accusations:\n")
-for i in range(1, 2):
+for i in range(1, 6):
     mystr = input("  input No." + str(i) + " : ")
     #mystr.encode('utf-8')
     #mystr = unicode(mystr, 'utf-8')
@@ -17,7 +17,7 @@ for i in range(1, 2):
 #process
 print("\nInput ended. Start processing...\n")
 index = 0
-with open("test.json", 'r') as f:
+with open("train.json", 'r') as f:
     for line in f:
         index += 1
         dict_line = json.loads(line)
