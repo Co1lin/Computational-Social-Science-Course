@@ -1,13 +1,11 @@
 # -*- coding: utf-8 -*-
 import json
-import sys
-reload(sys)
-sys.setdefaultencoding('utf8')
+
 statistics = {}
 
 #input
 print "Please input five different accusations:\n"
-for i in range(1, 6):
+for i in range(1, 2):
     mystr = raw_input("  input No." + str(i) + " : ")
     #mystr.encode('utf-8')
     mystr = unicode(mystr, 'utf-8')
