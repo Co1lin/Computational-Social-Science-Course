@@ -12,3 +12,7 @@
 ---  
 
 统计结果输出至`output.txt`。刑期与数量之间以冒号分隔，方便Excel“分列”。但刑期并未排序，而且包含“life”、“death”值分别对应无期徒刑与死刑。
+
+代码学习记录：
+---
+https://blog.valderfield.com/archives/5/
