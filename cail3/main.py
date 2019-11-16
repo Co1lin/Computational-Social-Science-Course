@@ -7,8 +7,6 @@ statistics = {}
 print("Please input five different accusations:\n")
 for i in range(1, 6):
     mystr = input("  input No." + str(i) + " : ")
-    #mystr.encode('utf-8')
-    #mystr = unicode(mystr, 'utf-8')
     statistics[mystr] =\
         {
             "life": 0,
