@@ -4,20 +4,20 @@ import json
 statistics = {}
 
 #input
-print "Please input five different accusations:\n"
-for i in range(1, 6):
-    mystr = raw_input("  input No." + str(i) + " : ")
+print("Please input five different accusations:\n")
+for i in range(1, 2):
+    mystr = input("  input No." + str(i) + " : ")
     #mystr.encode('utf-8')
-    mystr = unicode(mystr, 'utf-8')
+    #mystr = unicode(mystr, 'utf-8')
     statistics[mystr] =\
         {
             "life": 0,
             "death": 0
         }
 #process
-print "\nInput ended. Start processing...\n"
+print("\nInput ended. Start processing...\n")
 index = 0
-with open("train.json", 'r') as f:
+with open("test.json", 'r') as f:
     for line in f:
         index += 1
         dict_line = json.loads(line)
@@ -27,7 +27,7 @@ with open("train.json", 'r') as f:
         life = info["life_imprisonment"]
         last = info["imprisonment"]
         for accu in dict_meta["accusation"]:
-            if statistics.has_key(accu):
+            if accu in statistics:
                 if death:
                     statistics[accu]["death"] += 1
                 elif life:
@@ -35,7 +35,7 @@ with open("train.json", 'r') as f:
                 else:
                     #statistics[accu][last] =\
                     #    statistics[accu].get(last, default=0) + 1
-                    if statistics[accu].has_key(last):
+                    if last in statistics[accu]:
                         statistics[accu][last] += 1
                     else:
                         statistics[accu][last] = 1
@@ -43,13 +43,13 @@ with open("train.json", 'r') as f:
             #endif
         #end for
         if index % 100 == 0:
-            print "  Processed about " + str(index) + " lines."
+            print("  Processed about " + str(index) + " lines.")
         #if index == 10000:
         #    break
     #end for
 #end with
 #output
-print "\nProcessing ended. Start Outputing...\n"
+print("\nProcessing ended. Start Outputing...\n")
 fo = open("output.txt", "w")
 fo.write("----OUTPUT----\n\n")
 #fo.write(str(statistics))
