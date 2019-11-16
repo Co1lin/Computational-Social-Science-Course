@@ -1,6 +1,6 @@
 声明：
 ---
-已经创建了此程序的Python3版本，因为Python3在字符串的编码上更加统一，避免了很多不必要的麻烦。新工程文件见同级文件夹“cail3”。请用python3运行。
+已经创建了此程序的Python3版本，因为Python3在字符串的编码上更加统一，避免了很多不必要的麻烦。新工程文件见同级文件夹“cail3”（ https://github.com/EnjoyColin/Computational-Social-Science-Course/tree/master/cail3 ）。请用python3运行。
 
 代码： 
 ---  
