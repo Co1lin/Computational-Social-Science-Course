@@ -33,8 +33,6 @@ with open("train.json", 'r') as f:
                 elif life:
                     statistics[accu]["life"] += 1
                 else:
-                    #statistics[accu][last] =\
-                    #    statistics[accu].get(last, default=0) + 1
                     if statistics[accu].has_key(last):
                         statistics[accu][last] += 1
                     else:
